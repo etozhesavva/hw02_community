@@ -6,7 +6,7 @@
   <main>
     <div class="container py-5">
       Записи сообщества <h1>{{group.title}}</h1>
-      <p>{{ group.description }}</p>
+      <p>{{ group.description|linebreaksbr }}</p>
       {% for post in posts %}
         <ul>
           <li>
@@ -16,7 +16,7 @@
             Дата публикации: {{ post.pub_date|date:"d E Y" }}
           </li>
         </ul>
-        <p>{{ post.text }}</p>    
+        <p>{{ post.text|linebreaksbr }}</p>    
         {% if not forloop.last %}<hr>{% endif %}
       {% endfor %}
     </div>
